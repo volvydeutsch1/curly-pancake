@@ -10,7 +10,9 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { HomeComponent } from './views/home/home.component';
 import { NotFoundComponent } from './views/not-found/not-found.component';
 import { CounterComponent } from './views/counter/counter.component';
-import { AsteriskPipe } from './views/controllers/asterisk.pipe';
+import { AsteriskPipe } from './controllers/asterisk.pipe';
+import { RandomDadJokeComponent } from './views/random-dad-joke/random-dad-joke.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { AsteriskPipe } from './views/controllers/asterisk.pipe';
     HomeComponent,
     NotFoundComponent,
     CounterComponent,
-    AsteriskPipe
+    AsteriskPipe,
+    RandomDadJokeComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { AsteriskPipe } from './views/controllers/asterisk.pipe';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
