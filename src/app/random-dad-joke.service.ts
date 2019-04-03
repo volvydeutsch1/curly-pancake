@@ -7,14 +7,15 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RandomDadJokeService {
-
+   httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+    })
+  };
   constructor(private http: HttpClient) {
-      const headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      });
   }
 
   getDadJoke(): Observable<any> {
-    return this.http.post<any>('https://icanhazdadjoke.com/',this.headers);
+    return this.http.post<any>('https://icanhazdadjoke.com/', this.httpOptions);
   }
 }
